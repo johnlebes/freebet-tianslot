@@ -1,1 +1,0 @@
-# freebet-tianslot
