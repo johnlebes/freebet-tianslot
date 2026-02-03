@@ -9,7 +9,7 @@
 body{
   margin:0;
   font-family:Arial, Helvetica, sans-serif;
-  color:#ffffff;
+  color:#fff;
   padding:24px;
 }
 
@@ -18,7 +18,7 @@ body{
   position: fixed;
   top:50%;
   left:50%;
-  height: 90vh;      /* kunci di tinggi layar */
+  height: 160vh;      /* kunci di tinggi layar */
   width: auto;        /* biar tidak melebar */
   transform: translate(-50%, -50%);
   z-index:-2;
@@ -30,12 +30,12 @@ body{
   left:0;
   width:100%;
   height:100%;
-  background:rgba(0, 0, 0, 0.514);
+  background:rgba(0,0,0,.65);
   z-index:-1;
 }
 
 .wrap{max-width:1100px;margin:auto}
-
+.card{background:rgba(0, 0, 0, 0.658);border-radius:16px;overflow:hidden}
 .title{padding:20px;text-align:center;font-size:32px;font-weight:bold}
 
 .warning{
@@ -52,7 +52,7 @@ table{
 }
 th,td{
   padding:10px;
-  border-bottom:1px solid #000000;
+  border-bottom:1px solid #333;
   text-align:center
 }
 th{color:#25ff2a}
@@ -62,8 +62,8 @@ th{color:#25ff2a}
   padding:30px;
 }
 .claim-btn{
-  background:#000000;
-  color:#ffffff;
+  background:#22c55e;
+  color:#000;
   padding:14px 30px;
   font-size:18px;
   font-weight:bold;
@@ -80,9 +80,6 @@ th{color:#25ff2a}
 <video class="video-bg" autoplay muted loop playsinline preload="auto">
   <source src="https://files.catbox.moe/btkj60.mp4" type="video/mp4">
 </video>
-<audio id="bgsound" loop>
-  <source src="https://files.catbox.moe/4fz4lp.mp3" type="audio/mpeg">
-</audio>
 <div class="overlay"></div>
 
 <div class="wrap">
@@ -91,21 +88,26 @@ th{color:#25ff2a}
 <div class="title"></div>
 
 <div class="warning">
-  <b style="color:#fffb00;font-size:28px">PERHATIAN!</b><br><br>
-  INFO FREEBET AKAN DI UMUMKAN PUKUL <b>18.00 WIB</b><br>
-  Kembali lagi nanti dan cek ID kamu ... ^^
+  <b style="color:#fffb00;font-size:28px">SELAMAT UNTUK 28 ID BERUNTUNG!</b><br><br>
+  CEK & SALIN KODE PROMO KAMU DI BAWAH INI ↓
 </div>
 
 <table>
 <thead>
 <tr>
+<th>#</th>
+<th>USER ID</th>
+<th>BONUS</th>
+<th>KODE PROMO</th>
+<th>POLA GACOR</th>
 </tr>
 </thead>
 <tbody id="tbody"></tbody>
 </table>
 
 <div class="claim-area">
-  
+  <a id="claimLink" class="claim-btn" href="#" target="_blank">
+    ✅ KLAIM DISINI
   </a>
 </div>
 
@@ -114,12 +116,39 @@ th{color:#25ff2a}
 
 <script>
 // LINK KLAIM
-const CLAIM_LINK = "";
+const CLAIM_LINK = "https://tinyurl.com/mb479emw";
 document.getElementById("claimLink").href = CLAIM_LINK;
 
 // EDIT TABEL DISINI
 const DATA_TABEL = [
-
+  { user:"jpsiregar", bonus:250000, kode:"rBPeXi5w" },
+  { user:"Apin591", bonus:250000, kode:"Pi0NPFKT" },
+  { user:"Angga338", bonus:250000, kode:"suRabQzk" },
+  { user:"Naga234", bonus:250000, kode:"a2nGhyxt" },
+  { user:"bastards", bonus:250000, kode:"cpAhhDfX" },
+  { user:"jenglot38", bonus:250000, kode:"iCb76eAn" },
+  { user:"sepsa", bonus:250000, kode:"5EEYqYO1" },
+  { user:"jagoanema123", bonus:200000, kode:"6r10buQ8" },
+  { user:"abaook", bonus:200000, kode:"vfnbrncv" },
+  { user:"mobaruk", bonus:200000, kode:"IzngZGsE" },
+  { user:"Nampar82", bonus:200000, kode:"VEg9xlhV" },
+  { user:"serbabakti", bonus:200000, kode:"IzngZGsE" },
+  { user:"Mimin321", bonus:200000, kode:"VEg9xlhV" },
+  { user:"aldifc1", bonus:200000, kode:"IAfB1a47" },
+  { user:"gacor1", bonus:200000, kode:"wy1TAG1f" },
+  { user:"keisyalutfi", bonus:200000, kode:"HtP1c8UG" },
+  { user:"galin9", bonus:200000, kode:"HtP1c8UG" },
+  { user:"arumi10", bonus:200000, kode:"IAfB1a47" },
+  { user:"Bangor76", bonus:200000, kode:"wy1TAG1f" },
+  { user:"Genus202", bonus:200000, kode:"HtP1c8UG" },
+  { user:"putrabet", bonus:150000, kode:"rBPeXi5w" },
+  { user:"Setiawati", bonus:150000, kode:"Pi0NPFKT" },
+  { user:"zeus2754", bonus:150000, kode:"suRabQzk" },
+  { user:"Qunay22", bonus:150000, kode:"a2nGhyxt" },
+  { user:"Ranihan12", bonus:150000, kode:"cpAhhDfX" },
+  { user:"moscow123", bonus:150000, kode:"rBPeXi5w" },
+  { user:"bogart87", bonus:150000, kode:"Pi0NPFKT" },
+  { user:"anju1234", bonus:150000, kode:"suRabQzk" },
 ];
 
 const tb = document.getElementById("tbody");
@@ -135,20 +164,5 @@ DATA_TABEL.forEach((r,i)=>{
   `;
 });
 </script>
-<script>
-const audio = document.getElementById("bgsound");
-
-function startAudio(){
-  audio.play();
-  document.removeEventListener("click", startAudio);
-  document.removeEventListener("scroll", startAudio);
-  document.removeEventListener("touchstart", startAudio);
-}
-
-document.addEventListener("click", startAudio);
-document.addEventListener("scroll", startAudio);
-document.addEventListener("touchstart", startAudio);
-</script>
 </body>
 </html>
-
