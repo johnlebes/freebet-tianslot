@@ -87,7 +87,6 @@
 
   <div class="modal" id="prizeModal">
     <div class="modal-content">
-      <div class="modal-content">
     <h1>SELAMAT!</h1>
     <p>Anda memenangkan hadiah sebesar</p>
     <div class="prize-amount" id="prizeAmount">IDR 1.000.000</div>
@@ -311,7 +310,6 @@ modal.addEventListener('click', () => {
   modal.classList.remove('show');
 });
 
-// STOP klik di dalam box supaya tidak nutup
 modalContent.addEventListener('click', (e) => {
   e.stopPropagation();
 });
