@@ -1,118 +1,1091 @@
+
+
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>KOPDAR4D - Layanan Bantuan</title>
-  <style>
-    :root{
-      --bg1:#0f2a4d;
-      --bg2:#ffe600;
-      --card:rgba(255,255,255,.12);
-      --border:rgba(255,255,255,.16);
-      --text:#fff;
-      --muted:rgba(255,255,255,.86);
-      --btn1:#ffd54f;
-      --btn2:rgba(255,255,255,.14);
-    }
-    *{box-sizing:border-box}
-    body{
-      margin:0;
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      min-height:100vh;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      padding:18px;
-      color:var(--text);
-      background:
-        radial-gradient(900px 600px at 15% 10%, rgba(255,255,255,.12), transparent 60%),
-        linear-gradient(135deg,var(--bg1),var(--bg2));
-      text-align:center;
-    }
-    .card{
-      width:100%;
-      max-width:420px;
-      background:var(--card);
-      border:1px solid var(--border);
-      border-radius:18px;
-      padding:22px 18px 18px;
-      backdrop-filter: blur(12px);
-      box-shadow:0 14px 40px rgba(0,0,0,.28);
-    }
-    .logo{
-      width:min(220px, 70vw);
-      border-radius:14px;
-      display:block;
-      margin:2px auto 14px;
-    }
-    h1{
-      margin:0 0 8px;
-      font-size:18px;
-      font-weight:800;
-      letter-spacing:.2px;
-    }
-    p{
-      margin:0 auto 16px;
-      font-size:14px;
-      line-height:1.45;
-      color:var(--muted);
-      max-width:34ch;
-    }
-    .btn{
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      width:100%;
-      padding:14px 14px;
-      border-radius:14px;
-      text-decoration:none;
-      font-weight:800;
-      letter-spacing:.2px;
-      transition: transform .12s ease;
-      -webkit-tap-highlight-color: transparent;
-    }
-    .btn:active{ transform: translateY(1px) scale(.99); }
-    .btn-primary{
-      background:var(--btn1);
-      color:#1b1b1b;
-      box-shadow:0 12px 24px rgba(0,0,0,.22);
-      margin-bottom:10px;
-    }
-    .btn-secondary{
-      background:var(--btn2);
-      color:var(--text);
-      border:1px solid var(--border);
-    }
-    .small{
-      margin-top:14px;
-      font-size:12px;
-      color:rgba(255,255,255,.78);
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:url" content="" />
+    <meta property="og:title" content="TARUNA 4D - Lucky Wheel" />
+    <meta property="og:description" content="Putar roda keberuntungan dan menangkan hadiah hingga 200 ribu! Gratis dan mudah." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://i.imgur.com/tXsNoYX.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@replit" />
+    <meta name="twitter:title" content="TARUNA 4D - Lucky Wheel" />
+    <meta name="twitter:description" content="Putar roda keberuntungan dan menangkan hadiah nya." />
+    <meta name="twitter:image" content="https://i.imgur.com/tXsNoYX.png" />
+    <title>TARUNA4D - Spin & Win Lucky Wheel</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            width: 100%;
+            height: 100%;
+        }
+
+        body {
+            background: linear-gradient(135deg, #000000 0%, #099476 50%, #1774ca 100%);
+            color: #ffffff;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header{
+  text-align:center;
+  padding: 10px 20px 25px;
+}
+
+        .logo-wrapper{
+  margin-bottom: 8px;
+}
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .logo {
+            height: 100px;
+            display: block;
+            filter: drop-shadow(0 10px 25px rgba(0,0,0,0.5));
+            position: relative;
+            z-index: 11;
+        }
+
+        .logo-image{
+  height: 90px;
+  max-width: 420px;
+  width: auto;
+  filter: drop-shadow(0 8px 20px rgba(0,0,0,0.5));
+}
+
+/* Responsive biar pas di HP */
+@media (max-width:768px){
+  .logo-image{
+    height: 65px;
+  }
+}
+
+        h1 {
+            font-size: 3rem;
+            font-weight: 900;
+            margin-bottom: 10px;
+            color: #ffffff;
+            animation: fadeIn 0.8s ease-out;
+            position: relative;
+            z-index: 11;
+        }
+
+        h1 .highlight {
+            color: #1802e2;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+
+        .subtitle {
+            font-size: 1.5rem;
+            color: rgb(255, 255, 255);
+            font-weight: 500;
+            margin-bottom: 30px;
+            animation: fadeIn 1s ease-out;
+            position: relative;
+            z-index: 11;
+        }
+
+        .main-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: start;
+            margin-bottom: 40px;
+        }
+
+        @media (max-width: 768px) {
+            .main-content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            h1 {
+                font-size: 2rem;
+            }
+            .subtitle {
+                font-size: 1.1rem;
+            }
+        }
+
+        .wheel-container {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .wheel-wrapper {
+            position: relative;
+            width: 350px;
+            height: 350px;
+            max-width: 100%;
+        }
+
+        .pointer {
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 30;
+            width: 50px;
+            height: 60px;
+            filter: drop-shadow(0 4px 8px rgba(0,0,0,0.5));
+        }
+
+        .pointer svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        .wheel-outer {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            padding: 15px;
+            background: linear-gradient(to bottom, #bbff00, #00ccff);
+            box-shadow: 0 0 50px rgba(0,0,0,0.8), inset 0 0 20px rgba(0,0,0,0.3);
+            border: 4px solid #251620;
+            position: relative;
+        }
+
+        .wheel-inner {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background: conic-gradient(
+                from 0deg,
+                #18bb09 0deg 60deg,
+                #ffffff 60deg 120deg,
+                #18bb09 120deg 180deg,
+                #ffffff 180deg 240deg,
+                #18bb09 240deg 300deg,
+                #ffffff 300deg 360deg
+            );
+            border: 4px solid #664400;
+            box-shadow: inset 0 0 20px rgba(0,0,0,0.2);
+            position: relative;
+            animation: spin-placeholder 0s linear;
+        }
+
+        .wheel-inner.spinning {
+            animation: spin-wheel 6s cubic-bezier(0.15, 0, 0.15, 1) forwards;
+        }
+
+        @keyframes spin-wheel {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(var(--rotation));
+            }
+        }
+
+        .prize-text {
+            position: absolute;
+            font-weight: 900;
+            font-size: 24px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .wheel-center {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(to bottom-right, #FFD700, #B8860B);
+            border: 4px solid #664400;
+            box-shadow: 0 0 15px rgba(0,0,0,0.4);
+            z-index: 20;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .wheel-center::after {
+            content: '';
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            background: #CC0000;
+            border: 2px solid #880000;
+            box-shadow: inset 0 0 5px rgba(0,0,0,0.3);
+        }
+
+        .input-section {
+            background: rgba(255, 215, 0, 0.05);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 215, 0, 0.2);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 0 50px -12px rgba(255, 215, 0, 0.1);
+            margin-bottom: 30px;
+        }
+
+        .input-section h2 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .input-section p {
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 20px;
+            font-size: 0.95rem;
+        }
+
+        input {
+            width: 100%;
+            height: 56px;
+            font-size: 18px;
+            text-align: center;
+            font-family: 'Courier New', monospace;
+            letter-spacing: 2px;
+            background: rgba(0, 0, 0, 0.5);
+            border: 2px solid rgba(255, 215, 0, 0.3);
+            border-radius: 10px;
+            color: #FFD700;
+            margin-bottom: 15px;
+            transition: all 0.3s ease;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: #FFD700;
+            box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+            background: rgba(0, 0, 0, 0.7);
+        }
+
+        input::placeholder {
+            color: rgba(255, 255, 255, 0.3);
+        }
+
+        button {
+            width: 100%;
+            height: 64px;
+            font-size: 24px;
+            font-weight: 900;
+            letter-spacing: 2px;
+            background: linear-gradient(to bottom, #FFD700, #CCAA00);
+            color: #000000;
+            border: 4px solid #997700;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            box-shadow: 0 0 30px rgba(255, 215, 0, 0.4);
+            font-family: inherit;
+        }
+
+        button:hover:not(:disabled) {
+            transform: scale(1.02);
+            box-shadow: 0 0 40px rgba(255, 215, 0, 0.6);
+            background: linear-gradient(to bottom, #FFED4E, #FFD700);
+        }
+
+        button:active:not(:disabled) {
+            transform: scale(0.98);
+            box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+        }
+
+        button:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+
+        .jackpot-display {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 5px;
+            padding-top: 15px;
+        }
+
+        .jackpot-label {
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .jackpot-amount {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #4ade80;
+            font-family: 'Courier New', monospace;
+            letter-spacing: 1px;
+        }
+
+        .spun-message {
+            text-align: center;
+            padding: 15px;
+            background: rgba(239, 68, 68, 0.2);
+            border: 1px solid rgba(239, 68, 68, 0.5);
+            border-radius: 8px;
+            color: rgba(248, 113, 113, 0.9);
+            animation: pulse 2s infinite;
+            margin-bottom: 20px;
+        }
+
+        .winners-section {
+            background: rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            overflow: hidden;
+        }
+
+        .winners-header {
+            background: linear-gradient(to right, rgba(255, 215, 0, 0.2), rgba(255, 215, 0, 0.05));
+            padding: 15px 20px;
+            border-bottom: 1px solid rgba(255, 215, 255, 0.1);
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        .winners-table {
+            width: 100%;
+            border-collapse: collapse;
+            max-height: 300px;
+            overflow-y: auto;
+            display: block;
+            scrollbar-width: thin;
+            scrollbar-color: rgba(255, 215, 0, 0.3) rgba(0, 0, 0, 0.2);
+        }
+
+        .winners-table::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .winners-table::-webkit-scrollbar-track {
+            background: rgba(0, 0, 0, 0.2);
+        }
+
+        .winners-table::-webkit-scrollbar-thumb {
+            background: rgba(255, 215, 0, 0.3);
+            border-radius: 3px;
+        }
+
+        .winners-table::-webkit-scrollbar-thumb:hover {
+            background: rgba(255, 215, 0, 0.5);
+        }
+
+        .winners-table-header {
+            display: grid;
+            grid-template-columns: 60px 1fr 150px;
+            gap: 10px;
+            padding: 12px 20px;
+            background: rgba(0, 0, 0, 0.5);
+            font-weight: bold;
+            color: #FFD700;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 2px solid rgba(255, 215, 0, 0.3);
+            backdrop-filter: blur(10px);
+        }
+
+        .winners-table-row {
+            display: grid;
+            grid-template-columns: 60px 1fr 150px;
+            gap: 10px;
+            padding: 12px 20px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            align-items: center;
+            animation: slideInLeft 0.3s ease-out;
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .winners-table-row:hover {
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        .winner-no {
+            font-family: 'Courier New', monospace;
+            color: rgba(255, 255, 255, 0.6);
+            text-align: center;
+        }
+
+        .winner-id {
+            font-weight: 500;
+            color: #ffffff;
+            text-transform: uppercase;
+        }
+
+        .winner-prize {
+            text-align: right;
+            font-weight: bold;
+            color: #4ade80;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal.show {
+            display: flex;
+        }
+
+        .modal-content {
+            background: linear-gradient(135deg, rgba(20, 10, 40, 0.95), rgba(30, 20, 50, 0.95));
+            border: 2px solid rgba(255, 215, 0, 0.5);
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+            max-width: 500px;
+            width: 90%;
+            box-shadow: 0 0 60px rgba(255, 215, 0, 0.3);
+            animation: zoomIn 0.3s ease-out;
+        }
+
+        @keyframes zoomIn {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .modal-content h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .modal-content p {
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .prize-amount {
+            font-size: 3rem;
+            font-weight: 900;
+            color: #FFD700;
+            margin: 30px 0;
+            animation: bounce 0.6s ease-in-out infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .modal-content button {
+            margin-top: 20px;
+            max-width: 300px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .floating-chat {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 100;
+        }
+
+        .chat-button {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(to right, #10b981, #059669);
+            border: 3px solid rgba(255, 255, 255, 0.2);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 0 20px rgba(16, 185, 129, 0.4);
+            animation: float 3s ease-in-out infinite;
+            transition: transform 0.2s ease;
+        }
+
+        .chat-button:hover {
+            transform: scale(1.1);
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .chat-button svg {
+            width: 32px;
+            height: 32px;
+            color: white;
+        }
+
+        .mute-button {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: rgba(0, 0, 0, 0.5);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            color: white;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 50;
+            transition: all 0.3s ease;
+        }
+
+        .mute-button:hover {
+            background: rgba(0, 0, 0, 0.7);
+            border-color: rgba(255, 255, 255, 0.4);
+        }
+
+        .mute-button svg {
+            width: 24px;
+            height: 24px;
+        }
+
+        .pulse-ring {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 60px;
+            height: 60px;
+            border: 3px solid rgba(16, 185, 129, 0.3);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            animation: pulse-ring 2s ease-in-out infinite;
+            pointer-events: none;
+        }
+
+        @keyframes pulse-ring {
+            0% {
+                transform: translate(-50%, -50%) scale(1);
+                opacity: 1;
+            }
+            100% {
+                transform: translate(-50%, -50%) scale(1.5);
+                opacity: 0;
+            }
+        }
+        #ticketInput{
+    margin-bottom:15px;
+}
+    </style>
 </head>
 <body>
-  <main class="card">
-    <!-- GANTI LOGO DI SINI (boleh pakai logo PNG kamu) -->
-    <img class="logo" src="https://i.imgur.com/DJZNtX2.jpeg" alt="KOPDAR4D Logo" />
+    <button class="mute-button" id="muteBtn" title="Toggle Sound">
+        <svg fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.26 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+        </svg>
+    </button>
 
-    <h1>Layanan Bantuan</h1>
-    <p>Pilih salah satu tombol di bawah untuk melanjutkan.</p>
+    <div class="container">
+        <header>
+            <div class="logo-wrapper">
+    <img class="logo-image" src="https://i.imgur.com/eUgmVtX.png" alt="TARUNA4D Logo">
+  </div>
+            <h1> <span class="highlight"></span></h1>
+            <p class="subtitle">DEPOSIT & LANGSUNG DAPAT FREE SPIN!</p>
+        </header>
 
-    <!-- GANTI LINK CLAIM -->
-    <a class="btn btn-primary" href="https://kopdarkita.com" rel="noopener">
-      LINK AKSES
-    </a>
+        <div class="main-content">
+            <div class="wheel-container">
+                <div class="wheel-wrapper">
+                    <div class="pointer">
+                        <svg viewBox="0 0 48 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M24 60L4 20C4 20 8 4 24 4C40 4 44 20 44 20L24 60Z" fill="#FFD700" stroke="#B8860B" stroke-width="2"/>
+                            <circle cx="24" cy="16" r="8" fill="#FFF" stroke="#B8860B" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <div class="wheel-outer">
+                        <div class="wheel-inner" id="wheel">
+                            <div class="wheel-center"></div>
+                            <!-- Prize texts will be generated by JavaScript -->
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-    <!-- GANTI LINK CS (Messenger / WA / Livechat) -->
-    <a class="btn btn-secondary" href="https://rb.gy/z6oj0i" rel="noopener">
-      HUBUNGI CS
-    </a>
+            <div>
+                <div class="input-section">
+    <h2>MASUKAN USER ID</h2>
+    <p>Masukan User ID anda untuk memutar roda keberuntungan!</p>
 
-    <div class="small">Respon cepat • Bantuan 1-1</div>
-  </main>
+    <input type="text" id="userIdInput" placeholder="Contoh: USER123" maxlength="20" />
+
+    <input type="text" id="ticketInput" placeholder="Masukan Kode Tiket" maxlength="30" />
+
+    <button id="spinBtn" onclick="startSpin()">SPIN SEKARANG!</button>
+
+    <div class="jackpot-display">
+        <div class="jackpot-label">Total Jackpot</div>
+        <div class="jackpot-amount" id="jackpot">IDR 888.888.888</div>
+    </div>
+</div>
+
+                <div id="spunMessage" class="spun-message" style="display: none;">
+                    Kesempatan spin anda sudah habis. Silahkan klaim hadiah anda.
+                </div>
+                <div class="winners-section">
+                    <div class="winners-header">🏆 50 Daftar Riwayat Spin Terakhir</div>
+                    <div class="winners-table" id="winnersTable">
+                        <div class="winners-table-header">
+                            <div>NO</div>
+                            <div>USER ID</div>
+                            <div>HADIAH</div>
+                        </div>
+                        <!-- Rows will be generated by JavaScript -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="prizeModal">
+        <div class="modal-content">
+            <h1>SELAMAT!</h1>
+            <p>Anda memenangkan hadiah sebesar</p>
+            <div class="prize-amount" id="prizeAmount">IDR 1.000.000</div>
+            <p>Silahkan hubungi CS untuk klaim hadiah anda dengan screenshot ini.</p>
+            <button onclick="claimPrize()">KLAIM SEKARANG</button>
+        </div>
+    </div>
+
+    <div class="floating-chat">
+        <div class="pulse-ring"></div>
+        <a href="https://tarunapordi.com" target="_blank" rel="noopener noreferrer" class="chat-button" title="Chat CS 24/7">
+            <svg fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-2 12H6v-2h12v2zm0-3H6V9h12v2zm0-3H6V6h12v2z"/>
+            </svg>
+        </a>
+    </div>
+
+    <audio id="bgMusic" loop></audio>
+    <audio id="spinSound"></audio>
+    <audio id="winSound"></audio>
+
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.0/dist/confetti.browser.min.js"></script>
+    <script>
+        const PRIZES = ["1K", "50K", "3K", "10K", "500K", "1JT"];
+        const PRIZE_AMOUNTS = ["1.000", "50.000", "3.000", "10.000", "500.000", "1.000.000"];
+        
+        let isSpin = false;
+        let currentRotation = 0;
+        let muted = true;
+        let winners = generateMockWinners();
+        let jackpot = 888888888;
+        // ===== TIKET SETTINGS =====
+const VALID_TICKETS = new Set([
+"TRN-X66A",
+"TRN-9K2Q",
+"TRN-A7MZ",
+"TRN-4T8P",
+"TRN-Q1WL",
+"TRN-8Z3N",
+"TRN-M5RX",
+"TRN-2V9C",
+"TRN-L0KD",
+"TRN-P7YS",
+"TRN-3H8F",
+"TRN-W2QN",
+"TRN-B6TJ",
+"TRN-5XLA",
+"TRN-R9ME",
+"TRN-1ZKP",
+"TRN-T4VC",
+"TRN-N8QW",
+"TRN-6JSA",
+"TRN-K3YD",
+"TRN-0MRT",
+"TRN-V7LP",
+"TRN-Z2QF",
+"TRN-8WKC",
+"TRN-D5XN",
+"TRN-9LTA",
+"TRN-H3QZ",
+"TRN-4YMV",
+"TRN-Q8RJ",
+"TRN-2KPW",
+"TRN-X7NF",
+"TRN-6ZLA",
+"TRN-M9QK",
+"TRN-1VTS",
+"TRN-P4RD",
+"TRN-8JYC",
+"TRN-B2QW",
+"TRN-5ZMP",
+"TRN-L7KT",
+"TRN-3XNV",
+"TRN-R0QF",
+"TRN-9WLS",
+"TRN-T6KD",
+"TRN-N1YP",
+"TRN-4QZM",
+"TRN-K8VC",
+"TRN-2JRX",
+"TRN-D7LA",
+"TRN-H5QN",
+"TRN-Z9KP"
+]);
+
+const usedTickets = new Set(JSON.parse(localStorage.getItem("usedTickets") || "[]"));
+
+function normalizeTicket(code) {
+  return (code || "").trim().toUpperCase();
+}
+
+function isTicketValid(code) {
+  const t = normalizeTicket(code);
+  return VALID_TICKETS.has(t) && !usedTickets.has(t);
+}
+
+function updateSpinButtonState() {
+  const userId = document.getElementById("userIdInput").value.trim();
+  const ticket = document.getElementById("ticketInput").value.trim();
+
+  const ok = userId.length > 0 && isTicketValid(ticket) && !hasSpun && !isSpin;
+  const btn = document.getElementById("spinBtn");
+
+  btn.disabled = !ok;
+  btn.textContent = hasSpun ? "SUDAH SPIN" : (ok ? "SPIN SEKARANG!" : "MASUKKAN TIKET");
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  const ticketInput = document.getElementById("ticketInput");
+  const userInput = document.getElementById("userIdInput");
+
+  ticketInput.addEventListener("input", updateSpinButtonState);
+  userInput.addEventListener("input", updateSpinButtonState);
+
+  updateSpinButtonState();
+});
+
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', () => {
+            drawWheelPrizes();
+            renderWinners();
+            updateUI();
+            setupAudio();
+            startJackpotAnimation();
+        });
+
+        function generateMockWinners() {
+            return Array.from({ length: 50 }, (_, i) => ({
+                username: `USER${Math.floor(Math.random() * 9000) + 1000}***`,
+                amount: PRIZE_AMOUNTS[Math.floor(Math.random() * PRIZE_AMOUNTS.length)]
+            }));
+        }
+
+        function drawWheelPrizes() {
+            const wheel = document.getElementById("wheel");
+            const segmentAngle = 360 / PRIZES.length;
+            
+            PRIZES.forEach((prize, index) => {
+                const angle = index * segmentAngle + segmentAngle / 2;
+                const div = document.createElement('div');
+                div.className = 'prize-text';
+                div.textContent = prize;
+                
+                const isWhite = (index + 1) % 2 === 0;
+                div.style.color = isWhite ? '#000000' : '#ffffff';
+                div.style.textShadow = isWhite ? 'none' : '0 2px 4px rgba(0,0,0,0.5)';
+                
+                const radius = 100;
+                const x = Math.cos((angle - 90) * Math.PI / 180) * radius;
+                const y = Math.sin((angle - 90) * Math.PI / 180) * radius;
+                
+                div.style.left = `calc(50% + ${x}px - 20px)`;
+                div.style.top = `calc(50% + ${y}px - 20px)`;
+                
+                wheel.appendChild(div);
+            });
+        }
+
+        function setupAudio() {
+            const bgMusic = document.getElementById('bgMusic');
+            const spinSound = document.getElementById('spinSound');
+            const winSound = document.getElementById('winSound');
+            
+            bgMusic.src = 'https://cdn.pixabay.com/download/audio/2022/03/24/audio_197846c632.mp3?filename=casino-music-1-2518.mp3';
+            spinSound.src = 'https://assets.mixkit.co/active_storage/sfx/2003/2003-preview.mp3';
+            winSound.src = 'https://assets.mixkit.co/active_storage/sfx/2019/2019-preview.mp3';
+            
+            bgMusic.volume = 0.3;
+            spinSound.volume = 0.6;
+            winSound.volume = 0.8;
+            
+            // Try to play on page load
+            setTimeout(() => {
+                if (!muted) {
+                    bgMusic.play().catch(e => console.log('Autoplay blocked by browser'));
+                }
+            }, 500);
+            
+            // Also try on first click/interaction anywhere on page
+            document.addEventListener('click', () => {
+                if (!muted && bgMusic.paused) {
+                    bgMusic.play().catch(e => console.log('Autoplay blocked'));
+                }
+            });
+        }
+
+        function toggleMute() {
+            muted = !muted;
+            const bgMusic = document.getElementById('bgMusic');
+            const muteBtn = document.getElementById('muteBtn');
+            
+            if (muted) {
+                bgMusic.pause();
+                muteBtn.innerHTML = '<svg fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M16.6915026,12.4744748 L3.50612381,13.2599618 C3.19218622,13.2599618 3.03521743,13.4170592 3.03521743,13.5741566 L1.15159189,20.0151496 C0.8376543,20.8006365 0.99,21.89 1.77946707,22.52 C2.41,22.99 3.50612381,23.1 4.13399899,22.8429026 L21.714504,14.0454487 C22.6563168,13.5741566 23.1272231,12.6315722 22.9702544,11.6889879 L4.13399899,1.16751336 C3.34915502,0.9104159 2.40734225,1.02605983 1.77946707,1.4973519 C0.994623095,2.13399899 0.837654299,3.22259692 1.15159189,3.95411374 L3.03521743,10.3951066 C3.03521743,10.5522041 3.34915502,10.7093015 3.50612381,10.7093015 L16.6915026,11.4947884 C16.6915026,11.4947884 17.1624089,11.4947884 17.1624089,11.0234963 L17.1624089,12.6315722 C17.1624089,12.4744748 16.6915026,12.4744748 16.6915026,12.4744748 Z"/></svg>';
+                muteBtn.style.opacity = '0.5';
+            } else {
+                bgMusic.play().catch(e => console.log('Autoplay blocked'));
+                muteBtn.innerHTML = '<svg fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.26 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg>';
+                muteBtn.style.opacity = '1';
+            }
+        }
+
+        document.getElementById('muteBtn').addEventListener('click', toggleMute);
+
+        function startJackpotAnimation() {
+            setInterval(() => {
+                const change = Math.floor(Math.random() * 20000) - 5000;
+                jackpot = Math.max(800000000, jackpot + change);
+                document.getElementById('jackpot').textContent = `IDR ${jackpot.toLocaleString('id-ID')}`;
+            }, 1000);
+        }
+
+        function startSpin() {
+            const userIdInput = document.getElementById('userIdInput');
+            const userId = userIdInput.value.trim();
+            const ticketRaw = document.getElementById("ticketInput").value;
+const ticket = normalizeTicket(ticketRaw);
+
+if (!ticket) {
+  alert("Masukan Kode Tiket terlebih dahulu!");
+  return;
+}
+
+if (!VALID_TICKETS.has(ticket)) {
+  alert("Kode tiket tidak valid!");
+  return;
+}
+
+if (usedTickets.has(ticket)) {
+  alert("Kode tiket sudah dipakai!");
+  return;
+}
+
+            if (!userId) {
+                alert('Masukan User ID terlebih dahulu!');
+                return;
+            }
+            
+            
+            if (isSpin) return;
+            
+            isSpin = true;
+            const spinBtn = document.getElementById('spinBtn');
+            spinBtn.disabled = true;
+            spinBtn.textContent = 'SPINNING...';
+            
+            // Play spin sound
+            if (!muted) {
+                const spinSound = document.getElementById('spinSound');
+                spinSound.currentTime = 0;
+                spinSound.play().catch(e => console.log('Audio play failed'));
+            }
+            
+// ===== WEIGHTED PRIZE LOGIC (FAIR & TRANSPARAN) =====
+function getWeightedPrizeIndex() {
+    const rand = Math.random() * 100;
+
+    if (rand < 60) return 0;   // 1K
+    if (rand < 90) return 2;   // 3K
+    return 3;                  // 10K
+}
+
+const prizeIndex = getWeightedPrizeIndex();
+const selectedPrize = PRIZES[prizeIndex];
+const formattedAmount = PRIZE_AMOUNTS[prizeIndex];
+
+            
+            // Calculate rotation
+            const segmentAngle = 360 / PRIZES.length; // 60
+            const currentSegmentCenter = (prizeIndex * segmentAngle) + (segmentAngle / 2);
+            const rotationNeeded = 360 - currentSegmentCenter;
+            const fullSpins = 360 * (8 + Math.floor(Math.random() * 4));
+            const randomOffset = (Math.random() - 0.5) * (segmentAngle * 0.6);
+            
+            const currentRotationMod = currentRotation % 360;
+            const distanceToNextZero = 360 - currentRotationMod;
+            const totalRotation = currentRotation + distanceToNextZero + fullSpins + rotationNeeded + randomOffset;
+            
+            currentRotation = totalRotation;
+            
+            // Animate wheel
+            const wheel = document.getElementById('wheel');
+            wheel.classList.add('spinning');
+            wheel.style.setProperty('--rotation', totalRotation + 'deg');
+            
+            setTimeout(() => {
+                wheel.classList.remove('spinning');
+                wheel.style.transform = `rotate(${totalRotation}deg)`;
+                
+                // Play win sound
+                if (!muted) {
+                    const winSound = document.getElementById('winSound');
+                    winSound.currentTime = 0;
+                    winSound.play().catch(e => console.log('Audio play failed'));
+                }
+                
+                // Stop spin sound
+                const spinSound = document.getElementById('spinSound');
+                spinSound.pause();
+                spinSound.currentTime = 0;
+                
+                // Show prize
+                document.getElementById('prizeAmount').textContent = `IDR ${formattedAmount}`;
+                document.getElementById('prizeModal').classList.add('show');
+                
+                // Add to winners
+                winners.unshift({ username: userId, amount: formattedAmount });
+                winners = winners.slice(0, 50);
+                renderWinners();
+                
+                // Mark as spun
+                usedTickets.add(ticket);
+                localStorage.setItem("usedTickets", JSON.stringify([...usedTickets]));
+                updateUI();
+                
+                // Confetti
+                celebrateWin();
+                
+                isSpin = false;
+            }, 6000);
+        }
+
+        function updateUI() {
+    const spinBtn = document.getElementById('spinBtn');
+    const userIdInput = document.getElementById('userIdInput');
+
+    spinBtn.disabled = false;
+    spinBtn.textContent = 'SPIN SEKARANG!';
+    userIdInput.disabled = false;
+}
+
+        function renderWinners() {
+            const table = document.getElementById('winnersTable');
+            const header = table.querySelector('.winners-table-header');
+            table.innerHTML = header.outerHTML;
+            
+            winners.forEach((winner, index) => {
+                const row = document.createElement('div');
+                row.className = 'winners-table-row';
+                row.innerHTML = `
+                    <div class="winner-no">${index + 1}</div>
+                    <div class="winner-id">${winner.username}</div>
+                    <div class="winner-prize">IDR ${winner.amount}</div>
+                `;
+                table.appendChild(row);
+            });
+        }
+
+        function claimPrize() {
+            window.location.href = 'https://rb.gy/yl02bc';
+        }
+
+        function celebrateWin() {
+            const duration = 3000;
+            const end = Date.now() + duration;
+            
+            const frame = () => {
+                confetti({
+                    particleCount: 5,
+                    angle: 60,
+                    spread: 55,
+                    origin: { x: 0 },
+                    colors: ['#FFD700', '#ff0000', '#ffffff']
+                });
+                confetti({
+                    particleCount: 5,
+                    angle: 120,
+                    spread: 55,
+                    origin: { x: 1 },
+                    colors: ['#FFD700', '#ff0000', '#ffffff']
+                });
+                
+                if (Date.now() < end) {
+                    requestAnimationFrame(frame);
+                }
+            };
+            frame();
+        }
+
+        // Close modal on background click
+        document.getElementById('prizeModal').addEventListener('click', (e) => {
+            if (e.target.id === 'prizeModal') {
+                document.getElementById('prizeModal').classList.remove('show');
+            }
+        });
+    </script>
 </body>
 </html>
-
-
-
